@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <limits.h>
+
+typedef uint16_t meter_t;
+
+unsigned int consumption(meter_t previous, meter_t current)
+{
+    return (uint16_t)(current - previous);
+}
+
+int main(void)
+{
+    printf("sizeof(meter_t) = %zu bytes, maximum reading = %u\n",
+           sizeof(meter_t), UINT16_MAX);
+
+    printf("Consumption: %u units\n",
+           consumption(1200, 1530));
+
+    printf("Consumption: %u units\n",
+           consumption(65400, 120));
+
+    return 0;
+}
+
+
+OUTPUT:
+
+sizeof(meter_t) = 2 bytes, maximum reading = 65535
+Consumption: 330 units
+Consumption: 256 units
