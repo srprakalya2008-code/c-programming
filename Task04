@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+#define SQUARE(x) ((x) * (x))
+#define MAXIMUM(a, b) ((a) > (b) ? (a) : (b))
+
+int main(void)
+{
+    int a, b;
+
+    printf("Enter two integers: ");
+    if (scanf("%d %d", &a, &b) != 2) {
+        printf("Invalid input.\n");
+        return 1;
+    }
+
+    printf("Square of first number: %d\n", SQUARE(a));
+    printf("Square of second number: %d\n", SQUARE(b));
+    printf("Maximum number: %d\n", MAXIMUM(a, b));
+
+    return 0;
+}
